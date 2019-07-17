@@ -1,0 +1,12 @@
+<div>
+  <button (click)="newProduct()">Add new product</button>
+  <app-product-form [product]="selectedProduct$ | async"
+                    (save)="onSave($event)"
+                    (cancel)="onCancel()"></app-product-form>
+</div>
+
+<app-products-list [products]="products$ | async"></app-products-list>
+
+<div *ngIf="errorMessage$ | async as errorMessage">
+  {{ errorMessage }}
+</div>

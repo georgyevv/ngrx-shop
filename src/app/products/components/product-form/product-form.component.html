@@ -1,0 +1,19 @@
+<div *ngIf="product">
+  <div>
+    <label>ID</label><br />
+    <label>{{ product.id }}</label>
+  </div>
+  <div>
+    <label>Name</label><br />
+    <input type="text" [(ngModel)]="product.name" />
+  </div>
+  <div>
+    <label>Description</label><br />
+    <textarea [(ngModel)]="product.description" cols="30" rows="10"></textarea>
+  </div>
+
+  <div>
+    <button (click)="onSave()">Save</button>
+    <button (click)="onCancel()">Cancel</button>
+  </div>
+</div>
